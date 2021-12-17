@@ -53,11 +53,23 @@ function Layout({ children }) {
         </Link>
         <ul className='nav'>
           <li>
-            <Link to='/posts'>Post</Link>
+            <Link to='/posts'>Posts</Link>
           </li>
         </ul>
       </nav>
       <div className='container'>{children}</div>
     </>
+  )
+}
+
+export function ErrorBoundary({ error }) {
+  console.log(error)
+  return (
+    <Document>
+      <Layout>
+        <h1>Error</h1>
+        <p>{error.message}</p>
+      </Layout>
+    </Document>
   )
 }
